@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shree Ram Trader</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+
+    <div class="background"></div>
+    <div class="gold-glow"></div>
+
+    <main class="card luxury-float">
+
+        <div class="profile-wrapper">
+            <div class="profile-ring shimmer">
+                <img src="profile.jpg" alt="Profile">
+            </div>
+        </div>
+
+        <h1 class="gold-text">
+            SHREE RAM TRADER<br>
+        </h1>
+
+        <p class="trust">
+            ✅ Trusted by 12,000+ investors
+        </p>
+
+        <!-- Telegram Subscriber Count -->
+        <div class="subscriber-box">
+            <span class="count" id="subCount">8,845</span>
+            <span class="label">Telegram Subscribers</span>
+        </div>
+
+        <div class="badge-row">
+            <span class="badge">24/7 Updates</span>
+            <span class="badge">Free to Join</span>
+        </div>
+
+        <!-- Telegram Button -->
+    <a href="https://t.me/+DNaPmjWZEy8xMDk0"
+   class="telegram-btn"
+      onclick="fbq('trackCustom','TelegramJoin');">
+   📊Join us on Telegram📊
+</a>
+
+        <div class="features">
+            <div class="feature">✅ Practical Strategies</div>
+            <div class="feature">✅ Learn with Experts</div>
+            <div class="feature">✅ Market Insights & Discussions</div>
+        </div>
+
+       <!-- Disclaimer -->
+    <div class="disclaimer">
+      <strong>Disclaimer:</strong><br>
+      This website is for Telegram channel.
+      
+      Visit our telegram channel to learn & earn.
+    </div>
+
+<!-- Footer -->
+    <footer>
+      © 2026 Shree Ram trader<br>
+      <a href="https://t.me/+DNaPmjWZEy8xMDk0" target="_blank">Official Telegram</a>
+    </footer>
+
+
+
+    </main>
+
+<script>
+/* Animated Subscriber Counter */
+let count = 12845; // Change starting value
+const counter = document.getElementById("subCount");
+
+setInterval(() => {
+    count += Math.floor(Math.random() * 3);
+    counter.innerText = count.toLocaleString();
+}, 3000);
+</script>
+
+</body>
+</html>
