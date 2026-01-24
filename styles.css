@@ -203,6 +203,38 @@ body {
   transform: translateY(-3px);
   box-shadow: 0 18px 60px rgba(0, 140, 255, 0.65);
 }
+.auto-redirect-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 18px;
+}
+
+/* Auto Redirect Countdown */
+.auto-redirect-btn {
+  padding: 14px 26px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 40px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: linear-gradient(135deg, #1c2b36, #0f1720);
+  color: #ffffff;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.15),
+              inset 0 0 8px rgba(255,255,255,0.05);
+  backdrop-filter: blur(6px);
+  cursor: not-allowed;
+  transition: all 0.3s ease;
+  letter-spacing: 0.3px;
+}
+
+.auto-redirect-btn.active {
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(0, 198, 255, 0.7);
+}
+
+.auto-redirect-btn:hover.active {
+  transform: translateY(-2px);
+}
 
 /* Pulse animation */
 @keyframes pulseGlow {
