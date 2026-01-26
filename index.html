@@ -13,7 +13,9 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '2161460077928830');
 fbq('track', 'PageView');
-    fbq('track', 'Subscribe');
+fbq('track', 'ViewContent', {
+  content_name: 'Trading Landing Page'
+});
 </script>
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=2161460077928830&ev=PageView&noscript=1"
@@ -62,18 +64,10 @@ src="https://www.facebook.com/tr?id=2161460077928830&ev=PageView&noscript=1"
         <!-- Telegram Button -->
     <a href="https://t.me/+DNaPmjWZEy8xMDk0"
    class="telegram-btn"
-      onclick="fbq('trackCustom','TelegramJoin');">
+      onclick="fbq('track','Lead'); fbq('trackCustom','TelegramJoin');">
    📊Join us on Telegram📊
 </a>
-        
-<!-- Auto Redirect Unlock Button -->
-<div class="auto-redirect-wrapper">
-  <button id="redirectBtn" class="auto-redirect-btn" disabled>
-    Access unlocks in <span id="countdown">7</span> Sec...
-  </button>
-</div>
     
-
         <div class="features">
             <div class="feature">✅ Practical Strategies</div>
             <div class="feature">✅ Learn with Experts</div>
