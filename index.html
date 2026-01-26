@@ -64,10 +64,16 @@ src="https://www.facebook.com/tr?id=2161460077928830&ev=PageView&noscript=1"
         <!-- Telegram Button -->
     <a href="https://t.me/+DNaPmjWZEy8xMDk0"
    class="telegram-btn"
-      onclick="fbq('track','Lead'); fbq('trackCustom','TelegramJoin');">
+   onclick="fbq('track','Lead',{
+            content_name: 'Telegram Lead',
+            currency: 'INR'
+          });
+          fbq('trackCustom','TelegramJoin');
+          setTimeout(()=>{window.location.href=this.href},300);
+          return false;">
    📊Join us on Telegram📊
 </a>
-    
+
         <div class="features">
             <div class="feature">✅ Practical Strategies</div>
             <div class="feature">✅ Learn with Experts</div>
