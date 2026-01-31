@@ -1,142 +1,227 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-
+/* General Styles */
 body {
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #111;
+    color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    color: white;
-    overflow: hidden;
 }
 
 .background {
-    position: absolute;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle at center, rgba(255,215,0,0.08), transparent 60%);
-    animation: rotate 30s linear infinite;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(135deg, #1a1a1a, #333);
+    z-index: -2;
 }
 
-@keyframes rotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+.gold-glow {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: radial-gradient(circle, rgba(255,223,0,0.2) 0%, transparent 70%);
+    z-index: -1;
 }
 
+/* Card Styles */
 .card {
-    background: rgba(0,0,0,0.6);
-    backdrop-filter: blur(20px);
+    background: rgba(20, 20, 20, 0.9);
     border-radius: 20px;
-    padding: 35px;
-    width: 95%;
-    max-width: 420px;
+    padding: 30px;
+    max-width: 400px;
     text-align: center;
-    box-shadow: 0 0 40px rgba(255,215,0,0.15);
-    position: relative;
-    z-index: 2;
+    box-shadow: 0 0 40px rgba(255, 223, 0, 0.3);
+}
+
+.luxury-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+/* Profile */
+.profile-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
 }
 
 .profile-ring {
-    width: 120px;
-    height: 120px;
+    border: 4px solid #FFD700;
     border-radius: 50%;
     padding: 5px;
-    background: linear-gradient(45deg, gold, orange);
-    margin: auto;
+    display: inline-block;
+    animation: shimmer 2s infinite linear;
 }
 
 .profile-ring img {
-    width: 100%;
     border-radius: 50%;
+    width: 100px;
+    height: 100px;
 }
 
+@keyframes shimmer {
+    0% { box-shadow: 0 0 10px #FFD700; }
+    50% { box-shadow: 0 0 25px #FFD700; }
+    100% { box-shadow: 0 0 10px #FFD700; }
+}
+
+/* Gold Text */
 .gold-text {
-    font-size: 26px;
+    color: #FFD700;
     font-weight: 700;
-    background: linear-gradient(45deg, gold, orange);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    margin: 10px 0;
+}
+
+/* Trust */
+.trust {
+    color: #00FF00;
+    margin-bottom: 15px;
+}
+
+/* Subscriber Box */
+.subscriber-box {
+    background: rgba(255,255,255,0.05);
+    border-radius: 15px;
+    padding: 10px 20px;
+    margin: 10px 0;
+}
+
+.subscriber-box .count {
+    font-weight: 700;
+    font-size: 1.5em;
+    color: #FFD700;
+}
+
+.subscriber-box .label {
+    display: block;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+/* Badges */
+.badge-row {
     margin: 15px 0;
 }
 
-.trust {
-    font-size: 14px;
-    margin-bottom: 15px;
-}
-
-.subscriber-box {
-    background: rgba(255,255,255,0.1);
-    padding: 10px;
-    border-radius: 12px;
-    margin-bottom: 15px;
-}
-
-.count {
-    font-size: 22px;
-    font-weight: 700;
-}
-
-.badge-row {
-    margin-bottom: 20px;
-}
-
 .badge {
-    background: gold;
-    color: black;
-    padding: 5px 12px;
-    border-radius: 20px;
-    margin: 4px;
-    font-size: 12px;
+    display: inline-block;
+    background: #FFD700;
+    color: #111;
+    padding: 5px 10px;
+    margin: 3px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.85em;
 }
 
+/* ================= WHATSAPP BUTTON ================= */
+.whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: linear-gradient(145deg, #25D366, #1ebe57);
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 14px 24px;
+    border-radius: 50px;
+    margin: 20px 0;
+    box-shadow: 0 0 15px #25D366, 0 0 30px rgba(37, 211, 102, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 25px #25D366, 0 0 50px rgba(37, 211, 102, 0.6);
+}
+
+/* Pulse Animation */
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 10px #25D366, 0 0 20px rgba(37, 211, 102, 0.5); transform: scale(1); }
+    50% { box-shadow: 0 0 20px #25D366, 0 0 40px rgba(37, 211, 102, 0.7); transform: scale(1.05); }
+    100% { box-shadow: 0 0 10px #25D366, 0 0 20px rgba(37, 211, 102, 0.5); transform: scale(1); }
+}
+
+.pulse {
+    animation: pulseGlow 2s infinite;
+}
+
+/* ================= TELEGRAM BUTTON ================= */
 .telegram-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
-    padding: 14px 22px;
-    background: linear-gradient(45deg, #0088cc, #00aced);
-    color: white;
+    background: linear-gradient(145deg, #0088cc, #00aced);
+    color: #fff;
+    font-weight: 700;
     text-decoration: none;
-    font-weight: 600;
+    padding: 14px 24px;
     border-radius: 50px;
-    font-size: 16px;
-    transition: 0.3s ease;
-    margin-bottom: 20px;
+    margin: 20px 0;
+    box-shadow: 0 0 15px #0088cc, 0 0 30px rgba(0, 136, 204, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .telegram-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    transform: scale(1.08);
+    box-shadow: 0 0 25px #0088cc, 0 0 50px rgba(0, 136, 204, 0.6);
 }
 
+/* Telegram SVG Icon */
 .tg-icon {
     width: 20px;
     height: 20px;
+    fill: currentColor;
 }
 
+/* Telegram Pulse */
+@keyframes telegramPulse {
+    0% { box-shadow: 0 0 10px #0088cc, 0 0 20px rgba(0, 136, 204, 0.5); transform: scale(1); }
+    50% { box-shadow: 0 0 20px #0088cc, 0 0 40px rgba(0, 136, 204, 0.7); transform: scale(1.05); }
+    100% { box-shadow: 0 0 10px #0088cc, 0 0 20px rgba(0, 136, 204, 0.5); transform: scale(1); }
+}
+
+.telegram-pulse {
+    animation: telegramPulse 2s infinite;
+}
+
+/* Features */
 .features {
     text-align: left;
-    font-size: 14px;
-    margin-bottom: 15px;
+    margin: 15px 0;
 }
 
 .feature {
-    margin: 6px 0;
+    margin: 5px 0;
 }
 
+/* Disclaimer */
 .disclaimer {
-    font-size: 11px;
-    opacity: 0.7;
-    margin-bottom: 10px;
+    font-size: 0.8em;
+    color: #ccc;
+    margin-top: 20px;
 }
 
+/* Footer */
 footer {
-    font-size: 12px;
-    opacity: 0.8;
+    font-size: 0.75em;
+    margin-top: 20px;
+    color: #aaa;
+}
+
+footer a {
+    color: #25D366;
+    text-decoration: none;
 }
