@@ -1,116 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '2161460077928830');
-fbq('track', 'PageView');
-fbq('track', 'ViewContent', {
-  content_name: 'Trading Landing Page'
-});
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=2161460077928830&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shree Ram Trader</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
 </head>
 <body>
 
-    <div class="background"></div>
-    <div class="gold-glow"></div>
+<div class="background"></div>
+<div class="gold-glow"></div>
 
-    <main class="card luxury-float">
+<main class="card luxury-float">
 
-        <div class="profile-wrapper">
-            <div class="profile-ring shimmer">
-                <img src="profile.JPG" alt="Profile">
-            </div>
+    <div class="profile-wrapper">
+        <div class="profile-ring shimmer">
+            <img src="profile.JPG" alt="Profile">
         </div>
-
-        <h1 class="gold-text">
-            SHREE RAM TRADER<br>
-        </h1>
-
-        <p class="trust">
-            ✅ Trusted by 12,000+ investors
-        </p>
-
-        <!-- Telegram Subscriber Count -->
-        <div class="subscriber-box">
-            <span class="count" id="subCount">12,845</span>
-            <span class="label">Telegram Subscribers</span>
-        </div>
-
-        <div class="badge-row">
-            <span class="badge">24/7 Updates</span>
-            <span class="badge">Free to Join</span>
-        </div>
-
-        <!-- Telegram Button -->
-    <a href="https://t.me/+DNaPmjWZEy8xMDk0"
-   class="telegram-btn"
-   onclick="trackTelegram(event)">
-   📊Join us on Telegram📊
-</a>
-
-        <div class="features">
-            <div class="feature">✅ Practical Strategies</div>
-            <div class="feature">✅ Learn with Experts</div>
-            <div class="feature">✅ Market Insights & Discussions</div>
-        </div>
-
-       <!-- Disclaimer -->
-    <div class="disclaimer">
-      <strong>Disclaimer:</strong><br>
-      This website is for Telegram channel.
-      
-      Visit our telegram channel to learn & earn.
     </div>
 
-<!-- Footer -->
+    <h1 class="gold-text">SHREE RAM TRADER</h1>
+
+    <p class="trust">✅ Trusted by 12,000+ investors</p>
+
+    <div class="subscriber-box">
+        <span class="count" id="subCount">12,845</span>
+        <span class="label">Telegram Subscribers</span>
+    </div>
+
+    <div class="badge-row">
+        <span class="badge">24/7 Updates</span>
+        <span class="badge">Free to Join</span>
+    </div>
+
+    <!-- Telegram Button -->
+    <a href="https://t.me/+DNaPmjWZEy8xMDk0" class="telegram-btn">
+        <svg class="tg-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M9.04 15.47l-.39 5.48c.56 0 .8-.24 1.09-.53l2.62-2.5 5.44 3.98c1 .55 1.71.26 1.96-.92l3.56-16.7c.3-1.4-.5-1.95-1.48-1.59L1.57 9.1c-1.36.53-1.34 1.29-.23 1.63l5.1 1.59 11.84-7.46c.56-.34 1.07-.15.65.19"/>
+        </svg>
+        <span>Join us on Telegram</span>
+    </a>
+
+    <div class="features">
+        <div class="feature">✅ Practical Strategies</div>
+        <div class="feature">✅ Learn with Experts</div>
+        <div class="feature">✅ Market Insights & Discussions</div>
+    </div>
+
+    <div class="disclaimer">
+        <strong>Disclaimer:</strong><br>
+        This website is for Telegram channel. Visit our telegram channel to learn & earn.
+    </div>
+
     <footer>
-      © 2026 Shree Ram trader<br>
-      <a href="https://t.me/+DNaPmjWZEy8xMDk0" target="_blank">Official Telegram</a>
+        © 2026 Shree Ram Trader<br>
+        <a href="https://t.me/+DNaPmjWZEy8xMDk0" target="_blank">Official Telegram</a>
     </footer>
 
+</main>
 
-
-    </main>
-
-  <script>
-// Telegram Click Tracking
-function trackTelegram(e) {
-    e.preventDefault();
-
-    fbq('track', 'Lead', {
-        content_name: 'Telegram Join Click',
-        value: 1,
-        currency: 'INR'
-    });
-
-    setTimeout(() => {
-    window.location.href = "https://t.me/+DNaPmjWZEy8xMDk0";
-}, 200);
-}
-
-
-/* Animated Subscriber Counter */
-let count = 12845; // Change starting value
+<script>
+let count = 12845;
 const counter = document.getElementById("subCount");
 
 setInterval(() => {
