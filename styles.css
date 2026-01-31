@@ -1,227 +1,266 @@
-/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
 body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: #111;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+  min-height: 100vh;
+  background: #07090e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  overflow-x: hidden;
+  padding: 20px;
 }
 
+/* Background pattern */
 .background {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: linear-gradient(135deg, #1a1a1a, #333);
-    z-index: -2;
+  position: fixed;
+  inset: 0;
+  background:
+    linear-gradient(145deg, #06080d, #0b1020),
+    repeating-linear-gradient(
+      60deg,
+      rgba(255, 215, 120, 0.03) 0,
+      rgba(255, 215, 120, 0.03) 1px,
+      transparent 1px,
+      transparent 40px
+    );
+  z-index: -2;
 }
 
+/* Gold glow */
 .gold-glow {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: radial-gradient(circle, rgba(255,223,0,0.2) 0%, transparent 70%);
-    z-index: -1;
+  position: fixed;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(255, 200, 80, 0.28), transparent 70%);
+  filter: blur(90px);
+  top: 18%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+  animation: glowFloat 8s ease-in-out infinite alternate;
 }
 
-/* Card Styles */
+@keyframes glowFloat {
+  from { transform: translateX(-50%) scale(1); }
+  to { transform: translateX(-48%) scale(1.1); }
+}
+
+/* Card */
 .card {
-    background: rgba(20, 20, 20, 0.9);
-    border-radius: 20px;
-    padding: 30px;
-    max-width: 400px;
-    text-align: center;
-    box-shadow: 0 0 40px rgba(255, 223, 0, 0.3);
+  width: 100%;
+  max-width: 380px;
+  padding: 40px 28px;
+  border-radius: 26px;
+  background: linear-gradient(180deg, #0f1426, #090d18);
+  box-shadow:
+    0 40px 90px rgba(0, 0, 0, 0.85),
+    inset 0 0 0 1px rgba(255, 215, 120, 0.05);
+  text-align: center;
 }
 
+/* Floating animation */
 .luxury-float {
-    animation: float 6s ease-in-out infinite;
+  animation: floatCard 6s ease-in-out infinite;
 }
 
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
+@keyframes floatCard {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
 }
 
 /* Profile */
 .profile-wrapper {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
 .profile-ring {
-    border: 4px solid #FFD700;
-    border-radius: 50%;
-    padding: 5px;
-    display: inline-block;
-    animation: shimmer 2s infinite linear;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  padding: 4px;
+  background: linear-gradient(135deg, #ffd36a, #b88900);
+  box-shadow: 0 0 28px rgba(255, 200, 80, 0.4);
 }
 
 .profile-ring img {
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #0b0f1d;
 }
 
-@keyframes shimmer {
-    0% { box-shadow: 0 0 10px #FFD700; }
-    50% { box-shadow: 0 0 25px #FFD700; }
-    100% { box-shadow: 0 0 10px #FFD700; }
+/* Gold shimmer */
+.shimmer {
+  position: relative;
+  overflow: hidden;
 }
 
-/* Gold Text */
+.shimmer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(255,255,255,0.6),
+    transparent 70%
+  );
+  animation: shimmerMove 3s infinite;
+}
+
+@keyframes shimmerMove {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(100%); }
+}
+
+/* Heading */
 .gold-text {
-    color: #FFD700;
-    font-weight: 700;
-    margin: 10px 0;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 12px;
+  background: linear-gradient(90deg, #ffd36a, #fff0b3, #b88900);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/* Trust */
+.gold-text span {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* Trust text */
 .trust {
-    color: #00FF00;
-    margin-bottom: 15px;
+  font-size: 14px;
+  color: #cfd6e4;
+  margin-bottom: 22px;
 }
 
-/* Subscriber Box */
+/* Subscriber counter */
 .subscriber-box {
-    background: rgba(255,255,255,0.05);
-    border-radius: 15px;
-    padding: 10px 20px;
-    margin: 10px 0;
+  background: rgba(255, 215, 120, 0.08);
+  border: 1px solid rgba(255, 215, 120, 0.25);
+  border-radius: 18px;
+  padding: 14px;
+  margin-bottom: 24px;
 }
 
 .subscriber-box .count {
-    font-weight: 700;
-    font-size: 1.5em;
-    color: #FFD700;
+  font-size: 26px;
+  font-weight: 700;
+  color: #ffd36a;
 }
 
 .subscriber-box .label {
-    display: block;
-    font-size: 0.9em;
-    margin-top: 5px;
+  display: block;
+  font-size: 12px;
+  opacity: 0.8;
 }
 
 /* Badges */
 .badge-row {
-    margin: 15px 0;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 26px;
 }
 
 .badge {
-    display: inline-block;
-    background: #FFD700;
-    color: #111;
-    padding: 5px 10px;
-    margin: 3px;
-    border-radius: 12px;
-    font-weight: 600;
-    font-size: 0.85em;
+  padding: 8px 14px;
+  font-size: 13px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* ================= WHATSAPP BUTTON ================= */
-.whatsapp-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    background: linear-gradient(145deg, #25D366, #1ebe57);
-    color: #fff;
-    font-weight: 700;
-    text-decoration: none;
-    padding: 14px 24px;
-    border-radius: 50px;
-    margin: 20px 0;
-    box-shadow: 0 0 15px #25D366, 0 0 30px rgba(37, 211, 102, 0.5);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
-}
-
-.whatsapp-btn:hover {
-    transform: scale(1.08);
-    box-shadow: 0 0 25px #25D366, 0 0 50px rgba(37, 211, 102, 0.6);
-}
-
-/* Pulse Animation */
-@keyframes pulseGlow {
-    0% { box-shadow: 0 0 10px #25D366, 0 0 20px rgba(37, 211, 102, 0.5); transform: scale(1); }
-    50% { box-shadow: 0 0 20px #25D366, 0 0 40px rgba(37, 211, 102, 0.7); transform: scale(1.05); }
-    100% { box-shadow: 0 0 10px #25D366, 0 0 20px rgba(37, 211, 102, 0.5); transform: scale(1); }
-}
-
-.pulse {
-    animation: pulseGlow 2s infinite;
-}
-
-/* ================= TELEGRAM BUTTON ================= */
+/* Telegram button */
 .telegram-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    background: linear-gradient(145deg, #0088cc, #00aced);
-    color: #fff;
-    font-weight: 700;
-    text-decoration: none;
-    padding: 14px 24px;
-    border-radius: 50px;
-    margin: 20px 0;
-    box-shadow: 0 0 15px #0088cc, 0 0 30px rgba(0, 136, 204, 0.5);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.telegram-btn:hover {
-    transform: scale(1.08);
-    box-shadow: 0 0 25px #0088cc, 0 0 50px rgba(0, 136, 204, 0.6);
+  display: inline-flex;              /* changed for icon alignment */
+  align-items: center;               /* center icon + text */
+  justify-content: center;
+  gap: 10px;                         /* space between icon & text */
+  text-decoration: none;
+  background: linear-gradient(135deg, #008cff, #00c6ff);
+  color: #ffffff;
+  padding: 15px 20px;
+  border-radius: 18px;
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 28px;
+  box-shadow: 0 15px 45px rgba(0, 140, 255, 0.45);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  animation: pulseGlow 2s infinite;
 }
 
 /* Telegram SVG Icon */
 .tg-icon {
-    width: 20px;
-    height: 20px;
-    fill: currentColor;
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+  flex-shrink: 0;
 }
 
-/* Telegram Pulse */
-@keyframes telegramPulse {
-    0% { box-shadow: 0 0 10px #0088cc, 0 0 20px rgba(0, 136, 204, 0.5); transform: scale(1); }
-    50% { box-shadow: 0 0 20px #0088cc, 0 0 40px rgba(0, 136, 204, 0.7); transform: scale(1.05); }
-    100% { box-shadow: 0 0 10px #0088cc, 0 0 20px rgba(0, 136, 204, 0.5); transform: scale(1); }
+.telegram-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 60px rgba(0, 140, 255, 0.65);
 }
 
-.telegram-pulse {
-    animation: telegramPulse 2s infinite;
+/* Pulse animation */
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 0 rgba(0,140,255,0.6); }
+  50% { box-shadow: 0 0 28px rgba(0,140,255,0.9); }
+  100% { box-shadow: 0 0 0 rgba(0,140,255,0.6); }
 }
 
 /* Features */
 .features {
-    text-align: left;
-    margin: 15px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 26px;
 }
 
 .feature {
-    margin: 5px 0;
+  padding: 14px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 14px;
+  font-size: 14px;
+  border: 1px solid rgba(255,255,255,0.06);
 }
 
 /* Disclaimer */
 .disclaimer {
-    font-size: 0.8em;
-    color: #ccc;
-    margin-top: 20px;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #bdbdbd;
+  background: rgba(255,255,255,0.04);
+  padding: 14px;
+  border-radius: 14px;
+  margin-bottom: 22px;
+  border: 1px solid rgba(255,255,255,0.06);
 }
 
 /* Footer */
 footer {
-    font-size: 0.75em;
-    margin-top: 20px;
-    color: #aaa;
+  font-size: 12px;
+  color: #8f8f8f;
 }
 
 footer a {
-    color: #25D366;
-    text-decoration: none;
+  color: #ffd36a;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
 }
